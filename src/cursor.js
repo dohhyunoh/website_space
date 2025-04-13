@@ -2,7 +2,7 @@ function initCustomCursor(renderer) {
     // Create custom cursor element
     const cursor = document.createElement('div');
     cursor.classList.add('custom-cursor');
-    cursor.style.backgroundImage = 'url("/images/cursor_rocket.png")';
+    cursor.style.backgroundImage = 'url("/cursor_rocket.png")';
     cursor.style.width = '64px';
     cursor.style.height = '64px';
     cursor.style.position = 'fixed';
