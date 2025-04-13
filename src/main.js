@@ -159,13 +159,13 @@ earth.add(earthText);
 earth.userData.textSprite = earthText;
 
 // NEW: Add text sprite on top of Mars and store reference
-const mars = createPlanet(1.5, './images/red.jpg', [8, 7, 0], 'Mars');
+const mars = createPlanet(1.5, '/images/red.jpg', [8, 7, 0], 'Mars');
 const marsText = createTextSprite("github link", "green");
 marsText.position.set(0, 2.0, 0); // Adjust vertical offset relative to Earth's center
 mars.add(marsText);
 mars.userData.textSprite = marsText;
 
-const jupiter = createPlanet(1.8, './images/dreamy.avif', [-15, -2, 0], 'Jupiter');
+const jupiter = createPlanet(1.8, '/images/dreamy.avif', [-15, -2, 0], 'Jupiter');
 // NEW: Create text sprite, store reference (using white color)
 const jupiterText = createTextSprite("contact info", "green");
 jupiterText.position.set(0, 4.3, 0);
@@ -173,7 +173,7 @@ jupiter.add(jupiterText);
 jupiter.userData.textSprite = jupiterText;
 
 // NEW: Create text sprite for the Sun and store reference
-const sun = createPlanet(2.5, './images/sun_texture.jpeg', [15, -2, 0], 'Sun');
+const sun = createPlanet(2.5, '/images/sun_texture.jpeg', [15, -2, 0], 'Sun');
 const sunText = createTextSprite("Don't click", "green");
 sunText.position.set(0, 3.0, 0); // Adjust vertical offset relative to Earth's center
 sun.add(sunText);
@@ -182,11 +182,11 @@ sun.userData.textSprite = sunText;
 // --- Add Rings to Jupiter ---
 const jupiterRadius = jupiter.geometry.parameters.radius;
 // First ring - tilted one way
-const ring1 = createRings(jupiter, jupiterRadius * 1.2, jupiterRadius * 1.8, './images/ring_texture.jpg');
+const ring1 = createRings(jupiter, jupiterRadius * 1.2, jupiterRadius * 1.8, '/images/ring_texture.jpg');
 ring1.rotation.x = Math.PI / 4; // 45 degrees tilt
 
 // Second ring - tilted the opposite way
-const ring2 = createRings(jupiter, jupiterRadius * 1.2, jupiterRadius * 1.8, './images/ring_texture.jpg');
+const ring2 = createRings(jupiter, jupiterRadius * 1.2, jupiterRadius * 1.8, '/images/ring_texture.jpg');
 ring2.rotation.x = -Math.PI / 4; // -45 degrees tilt
 
 // --- Lighting ---
