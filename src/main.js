@@ -15,7 +15,7 @@ document.body.appendChild(renderer.domElement);
 
 // Add global resume PDF download button with centered positioning
 const resumeBtn = document.createElement('a');
-resumeBtn.href = 'resume.pdf'; // Adjust path if needed
+resumeBtn.href = '/resume.pdf'; // Adjust path if needed
 resumeBtn.download = 'resume.pdf';
 resumeBtn.textContent = 'Download Resume';
 resumeBtn.style.display = 'none'; // Initially hidden
