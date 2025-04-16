@@ -1,5 +1,10 @@
-body {
+html, body {
     margin: 0;
     padding: 0;
-    overflow: hidden; /* Optional: Prevent scrollbars */
+    overflow: hidden; /* Prevent scrollbars */
+    width: 100%;
+    height: 100%;
+}
+canvas {
+    display: block; /* Remove any inline spacing around the canvas */
 }

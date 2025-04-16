@@ -256,6 +256,9 @@ function onMouseClick(event) {
           }, 1000);
       }
 
+        // NEW: Change profile text on planet click
+        profileText.innerHTML = "click background to revert";
+
         // Calculate target position: slightly in front of the planet
         const planetPosition = new THREE.Vector3();
         targetPlanet.getWorldPosition(planetPosition); // Get world position of the planet
@@ -291,6 +294,9 @@ function onMouseClick(event) {
             }
         });
 
+        // NEW: Revert profile text when clicking background
+        profileText.innerHTML = "click on planets for more info";
+
         // Clicked on the background - Go back to overview
         if (currentTarget) { // Only go back if currently focused
             currentTarget = null;
@@ -316,11 +322,20 @@ renderer.domElement.addEventListener('click', onMouseClick, false);
 
 // --- Window Resize ---
 window.addEventListener('resize', () => {
+    // Update camera aspect ratio
     camera.aspect = window.innerWidth / window.innerHeight;
+
+    // Dynamically adjust FOV for smaller screens
+    if (window.innerWidth < 768) { // Example: Adjust for mobile screens
+        camera.fov = 90; // Increase FOV for a wider view
+    } else {
+        camera.fov = 75; // Default FOV for larger screens
+    }
     camera.updateProjectionMatrix();
+
+    // Update renderer size
     renderer.setSize(window.innerWidth, window.innerHeight);
 }, false);
-
 // --- Global variable for LookAt target (needed for tweening) ---
 let cameraLookAtTarget = overviewLookAt.clone();
 
